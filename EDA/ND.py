@@ -27,7 +27,8 @@ hw.head()
 # %%
 hw.describe()
 # %%
-sns.jointplot(data=hw,x='height',y='weight',hue='sex')
+sns.set_style('darkgrid')
+sns.jointplot(data=hw,x='height',y='weight',hue='sex',palette='Set1')
 # %%
 sns.jointplot(data=hw,x='height',y='weight',hue='sex',kind='kde')
 
