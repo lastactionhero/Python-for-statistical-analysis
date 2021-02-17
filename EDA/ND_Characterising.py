@@ -18,8 +18,7 @@ ds[cols] = ds[cols].replace(to_replace=0, value=np.NaN)
 ds.describe().transpose()
 #%%
 sns.pairplot(data=diabetes,hue='Outcome')
-# %%
-sns.heatmap(diabetes.corr())
+
 # %%
 hw = pd.read_csv("height_weight.csv")
 # %%
@@ -35,4 +34,14 @@ sns.jointplot(data=hw,x='height',y='weight',hue='sex',kind='kde')
 # %%
 sns.jointplot(data=hw,x='height',y='weight',kind='hex')
 
+# %%
+## Characterising is process of expressing data in one value or number
+# Correlation
+# %%
+sns.heatmap(diabetes.corr())
+# %%
+# Summary statistics like mean , mode , median
+diabetes.groupby('Outcome').describe().transpose()
+# %%
+grp = diabetes.groupby('Outcome').describe()
 # %%
